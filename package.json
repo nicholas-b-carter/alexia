@@ -23,7 +23,9 @@
     "test": "istanbul cover node_modules/mocha/bin/_mocha -- -u exports --reporter spec",
     "test-lcov": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- -u exports --reporter spec",
     "test:dev": "nodemon --exec \"mocha || true\"",
-    "toc": "doctoc README.md --github"
+    "toc": "doctoc README.md --github",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "debug": "^2.3.0",
@@ -31,7 +33,8 @@
     "glob": "^7.1.1",
     "lodash": "^4.16.6",
     "rimraf": "^2.5.4",
-    "stack-trace": "0.0.9"
+    "stack-trace": "0.0.9",
+    "snyk": "^1.317.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -69,5 +72,6 @@
   "bugs": {
     "url": "https://github.com/Accenture/alexia/issues",
     "email": "michael.gloger@accenture.com"
-  }
+  },
+  "snyk": true
 }
